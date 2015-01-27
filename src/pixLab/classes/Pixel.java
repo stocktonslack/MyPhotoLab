@@ -260,12 +260,12 @@ public class Pixel
   
   /**
    * Method to set the red to a new red value
-   * @param value the new value to use
+   * @param d the new value to use
    */
-  public void setRed(int value)
+  public void setRed(int d)
   {
     // set the red value to the corrected value
-    int red = correctValue(value);
+    int red = correctValue(d);
     
     // update the pixel value in the picture
     updatePicture(getAlpha(), red, getGreen(), getBlue());
@@ -347,9 +347,9 @@ public class Pixel
   * Method to get the average of the colors of this pixel
   * @return the average of the red, green, and blue values
   */
- public double getAverage()
+ public int getAverage()
  {
-   double average = (getRed() + getGreen() + getBlue()) / 3.0;
+   int average = (int) ((getRed() + getGreen() + getBlue()) / 3.0);
    return average;
  }
   
