@@ -76,10 +76,21 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("carterYouIdiot.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
+  }
+  
+  /**
+   * Method to test mirrorVerticleRightToLeft
+   */
+  public static void testMirrorVerticalRightToLeft()
+  {
+	  Picture carterYouIdiot = new Picture ("carterYouIdiot.jpg");
+	  carterYouIdiot.explore();
+	  carterYouIdiot.mirrorVerticalRightToLeft();
+	  carterYouIdiot.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -89,6 +100,17 @@ public class PictureTester
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+  }
+  
+  /**
+   * Method to test mirrorHorizontal
+   */
+  public static void testMirrorHorizontal()
+  {
+	  Picture carter = new Picture ("carterYouIdiot.jpg");
+	  carter.explore();
+	  carter.mirrorHorizontal();
+	  carter.explore();
   }
   
   /** Method to test the collage method */
@@ -102,14 +124,14 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("carterYouIdiot.jpg");
     swan.edgeDetection(10);
     swan.explore();
   }
   
   public static void testFixUnderwater()
   {
-	  Picture water = new Picture("water.jpg");
+	  Picture water = new Picture("carterYouIdiot.jpg");
 	  water.explore();
 	  water.fixUnderwater();
 	  water.explore();
@@ -128,9 +150,11 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    testFixUnderwater();
+    //testFixUnderwater();
     //testMirrorVertical();
+	//testMirrorVerticalRightToLeft();
     //testMirrorTemple();
+    testMirrorHorizontal();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
