@@ -109,7 +109,7 @@ public class PictureTester
   {
 	  Picture carter = new Picture ("carterYouIdiot.jpg");
 	  carter.explore();
-	  carter.mirrorHorizontal();
+	  carter.mirrorHorizontal(carter);
 	  carter.explore();
   }
   
@@ -131,7 +131,7 @@ public class PictureTester
   
   public static void testFixUnderwater()
   {
-	  Picture water = new Picture("carterYouIdiot.jpg");
+	  Picture water = new Picture("water.jpg");
 	  water.explore();
 	  water.fixUnderwater();
 	  water.explore();
