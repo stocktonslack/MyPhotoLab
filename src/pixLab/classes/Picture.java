@@ -250,13 +250,16 @@ public class Picture extends SimplePicture
 		}
 	}
 
+	/**
+	 * Method that mirrors the picture around the verticle center from right to left
+	 */
 	public void mirrorVerticalRightToLeft()
 	{
 		Pixel[][] pixels = this.getPixels2D();
 		Pixel leftPixel = null;
 		Pixel rightPixel = null;
 		int width = pixels[0].length;
-		for (int row = pixels.length-1; row >= 0; row--)
+		for (int row = pixels.length - 1; row >= 0; row--)
 		{
 			for (int col = 0; col < width / 2; col++)
 			{
@@ -290,20 +293,67 @@ public class Picture extends SimplePicture
 		}
 	}
 
+	
+	/**
+	 * Mirror the ppicture around a horizontal line, so that the top is mirrored on the bottom
+	 * @param pix
+	 */
 	public void mirrorHorizontal(Picture pix)
 	{
 		Pixel[][] pixels = this.getPixels2D();
 		Pixel topPixel = null;
 		Pixel bottomPixel = null;
 		int height = pix.getHeight();
-		int mid = pix.getHeight()/2;
-		for ( int col = 0; col < pix.getWidth(); col++)
+		int mid = pix.getHeight() / 2;
+		for (int col = 0; col < pix.getWidth(); col++)
 		{
-			for(int row = 0; row < mid; row++)
+			for (int row = 0; row < mid; row++)
 			{
 				topPixel = pixels[row][col];
 				bottomPixel = pixels[height - 1 - row][col];
 				bottomPixel.setColor(topPixel.getColor());
+			}
+		}
+	}
+
+	public void mirrorHorizontalBotToTop(Picture pix)
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel topPixel = null;
+		Pixel bottomPixel = null;
+		int height = pix.getHeight();
+		int mid = pix.getHeight() / 2;
+		for (int col = 0; col < pix.getWidth(); col++)
+		{
+			for (int row = 0; row < mid; row++)
+			{
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[height - 1 - row][col];
+				topPixel.setColor(bottomPixel.getColor());
+			}
+		}
+	}
+
+	/**
+	 * Mirror the picture diagonally, mirroring by the row and column from the bottom left to the top right.
+	 * @param pix
+	 */
+	public void mirrorDiagonal(Picture pix)
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel topRightPixel = null;
+		Pixel bottomLeftPixel = null;
+		int width = pixels[0].length;
+		for (int row = 0; row < pixels.length; row++)
+		{
+			for (int col = 0; col < pixels[0].length; col++)
+			{
+				if (col < pixels.length)
+				{
+					topRightPixel = pixels[row][col];
+					bottomLeftPixel = pixels[col][row];
+					topRightPixel.setColor(bottomLeftPixel.getColor());
+				}
 			}
 		}
 	}

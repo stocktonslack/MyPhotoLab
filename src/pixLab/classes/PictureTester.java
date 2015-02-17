@@ -113,6 +113,22 @@ public class PictureTester
 	  carter.explore();
   }
   
+  public static void testMirrorHorizontalBotToTop()
+  {
+	  Picture carter = new Picture ("carterYouIdiot.jpg");
+	  carter.explore();
+	  carter.mirrorHorizontalBotToTop(carter);
+	  carter.explore();
+  }
+  
+  public static void testMirrorDiagonal()
+  {
+	  Picture carter = new Picture ("carterYouIdiot.jpg");
+	  carter.explore();
+	  carter.mirrorDiagonal(carter);
+	  carter.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -154,7 +170,9 @@ public class PictureTester
     //testMirrorVertical();
 	//testMirrorVerticalRightToLeft();
     //testMirrorTemple();
-    testMirrorHorizontal();
+    //testMirrorHorizontal();
+    //testMirrorHorizontalBotToTop();
+    testMirrorDiagonal();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
