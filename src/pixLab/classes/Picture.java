@@ -251,7 +251,8 @@ public class Picture extends SimplePicture
 	}
 
 	/**
-	 * Method that mirrors the picture around the verticle center from right to left
+	 * Method that mirrors the picture around the verticle center from right to
+	 * left
 	 */
 	public void mirrorVerticalRightToLeft()
 	{
@@ -292,29 +293,57 @@ public class Picture extends SimplePicture
 			}
 		}
 	}
-	
+
 	public void mirrorArms()
 	{
 		int mirrorPoint = 207;
 		Pixel leftPixel = null;
 		Pixel rightPixel = null;
-		int count = 0;
 		Pixel[][] pixels = this.getPixels2D();
-		
-		for(int row = 162; row < 211; row++)
+
+		for (int row = 170; row < 200; row++)
 		{
-			for(int col = 100; col < mirrorPoint; col++)
+			for (int col = 100; col < 180; col++)
 			{
-				leftPixel = pixels[row+50][col];
-				rightPixel = pixels [row][mirrorPoint - col + mirrorPoint];
+				leftPixel = pixels[row + 10][col - 12];
+				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
 				leftPixel.setColor(rightPixel.getColor());
+			}
+		}
+		for (int row = 159; row < 185; row++)
+		{
+			for (int col = 239; col < 300; col++)
+			{
+				rightPixel = pixels[row + 33][col-4];
+				leftPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+				rightPixel.setColor(leftPixel.getColor());
 			}
 		}
 	}
 
+	public void mirrorGull()
+	{
+		int mirrorPoint = 345;
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		Pixel [][] pixels = this.getPixels2D();
+		
+		for(int row = 235; row < 321; row ++)
+		{
+			for(int col = 237; col < mirrorPoint; col++)
+			{
+				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+				leftPixel = pixels[row][col];
+				rightPixel.setColor(leftPixel.getColor());
+			}
+		}
+			
+	}
 	
 	/**
-	 * Mirror the ppicture around a horizontal line, so that the top is mirrored on the bottom
+	 * Mirror the ppicture around a horizontal line, so that the top is mirrored
+	 * on the bottom
+	 * 
 	 * @param pix
 	 */
 	public void mirrorHorizontal(Picture pix)
@@ -354,7 +383,9 @@ public class Picture extends SimplePicture
 	}
 
 	/**
-	 * Mirror the picture diagonally, mirroring by the row and column from the bottom left to the top right.
+	 * Mirror the picture diagonally, mirroring by the row and column from the
+	 * bottom left to the top right.
+	 * 
 	 * @param pix
 	 */
 	public void mirrorDiagonal(Picture pix)
@@ -404,6 +435,9 @@ public class Picture extends SimplePicture
 			}
 		}
 	}
+	
+	public void copy2(Picture fromPic,int startRow, int startCol)
+	
 
 	/** Method to create a collage of several pictures */
 	public void createCollage()
