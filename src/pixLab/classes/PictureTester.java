@@ -169,6 +169,11 @@ public class PictureTester
 		gull.explore();
 	}
 	
+	public static void testChromakey()
+	{
+		
+	}
+	
 	public static void testCopy2()
 	{
 		

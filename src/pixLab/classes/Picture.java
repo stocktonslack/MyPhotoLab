@@ -437,7 +437,29 @@ public class Picture extends SimplePicture
 	}
 	
 	public void copy2(Picture fromPic,int startRow, int startCol)
+	{
+		
+	}
 	
+	public void chromakey(Picture pix)
+	{
+		Pixel chromePixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+		
+		for (int row = 0; row < pixels.length; row++)
+		{
+			for (int col = 0; col < pixels[0].length; col++)
+			{
+				chromePixel = pixels[row][col];
+				
+				if (chromePixel.getGreen() = 255)
+				{
+					
+				}
+			}
+		}
+		
+	}
 
 	/** Method to create a collage of several pictures */
 	public void createCollage()
