@@ -93,7 +93,8 @@ public class Picture extends SimplePicture
 		return output;
 
 	}
-
+	
+	
 	/** Method to set the blue to 0 */
 	public void zeroBlue()
 	{
@@ -503,6 +504,25 @@ public class Picture extends SimplePicture
 					leftPixel.setColor(Color.WHITE);
 			}
 		}
+	}
+	
+	private int numCandidates;
+	
+	public void dots()
+	{
+		int bestCandidate = 0;
+		int bestDistancae = 0;
+		for (int dot = 0; dot < numCandidates; dot++)
+		{
+			double width = Math.random() * getWidth();
+			double height = Math.random() * getHeight();
+			distance(findClosest(samples, ));
+		}
+	}
+	
+	public void distance()
+	{
+		
 	}
 
 	/*
