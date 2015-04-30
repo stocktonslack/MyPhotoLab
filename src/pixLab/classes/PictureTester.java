@@ -143,6 +143,7 @@ public class PictureTester
 		Picture swan = new Picture("carterYouIdiot.jpg");
 		swan.edgeDetection(10);
 		swan.explore();
+		
 	}
 
 	public static void testFixUnderwater()
@@ -205,7 +206,7 @@ public class PictureTester
 		// testMirrorDiagonal();
 		// testCollage();
 		// testCopy();
-		// testEdgeDetection();
+		testEdgeDetection();
 		// testEdgeDetection2();
 		// testChromakey();
 		// testEncodeAndDecode();
